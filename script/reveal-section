@@ -1,0 +1,14 @@
+export function initReveal(){
+  const observer = new IntersectionObserver((entries,obs)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+        obs.unobserve(entry.target);
+      }
+    })
+  },{threshold:.2});
+
+  document.querySelectorAll('.reveal-section').forEach(el=>{
+    observer.observe(el);
+  });
+}

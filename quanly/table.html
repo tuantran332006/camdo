@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bảng có thead cố định</title>
+<style>
+  /* Tạo vùng chứa cuộn */
+  .table-container {
+    width: 600px;
+    height: 500px;
+    overflow-y: auto;       /* Cuộn dọc */
+    border: 2px solid #ccc;
+    border-radius: 8px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 10px;
+    border: 1px solid #999;
+    text-align: left;
+  }
+
+  thead th {
+    position: sticky;
+    top: 0;                  /* Dính ở đầu khung */
+    background: #a2c8ee;     /* Màu nền cố định */
+    z-index: 5;              /* Đè lên phần thân */
+  }
+
+  tbody tr:nth-child(even) {
+    background: #f2f2f2;
+  }
+
+  .edit, .delete {
+    padding: 4px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .edit { background-color: #4CAF50; color: white; }
+  .delete { background-color: #f44336; color: white; }
+</style>
+</head>
+<body>
+
+<h2>Bảng có thead cố định trong div</h2>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Họ Tên</th>
+        <th>SDT</th>
+        <th>Sản phẩm</th>
+        <th>Xử lý</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 12 dòng dữ liệu -->
+      <tr><td>1</td><td>Nguyễn Văn A</td><td>0905123456</td><td>Laptop Dell</td><td><button class="edit">Sửa</button><button class="delete">Xóa</button></td></tr>
+      <tr><td>2</td><td>Trần Thị B</td><td>0987654321</td><td>Điện thoại Samsung</td><td><button class="edit">Sửa</button><button class="delete">Xóa</button></td></tr>
+      <tr><td>3</td><td>Lê Văn C</td><td>0912345678</td><td>Tai nghe Bluetooth</td><td><button class="edit">Sửa</button><button class="delete">Xóa</button></td></tr>
+      <tr><td>4</td><td>Phạm Thị D</td><td>0933222111</td><td>Máy tính bảng iPad</td><td><button class="edit">Sửa</button><button class="delete">Xóa</button></td></tr>
+      <tr><td>5</td><td>Võ Minh E</td><td>0977123456</td><td>Chuột Logitech</td><td><button class="edit">Sửa</button><button class="delete">Xóa</button></td></tr>
+      <tr><td>6</td><td>Đặng Thị F</td><td>0944556677</td><td>Bàn phím cơ</td><td><button class="edit">Sửa</button><button class="delete">Xóa</button></td></tr>
+      <tr><td>7</td><td>Ngô Văn G</td><td>0909888777</td><td>Màn hình LG</td><td><button class="edit">Sửa</button><button class="delete">Xóa</button></td></tr>
+      <tr><td>8</td><td>Hoàng Thị H</td><td>0911777888</td><td>Tai nghe AirPods</td><td><button class="edit">Sửa</button><button class="delete">Xóa</button></td></tr>
+      <tr><td>9</td><td>Phan Văn I</td><td>0966112233</td><td>Ổ cứng SSD</td><td><button class="edit">Sửa</button><button class="delete">Xóa</button></td></tr>
+      <tr><td>10</td><td>Bùi Thị K</td><td>0988665544</td><td>Loa Bluetooth JBL</td><td><button class="edit">Sửa</button><button class="delete">Xóa</button></td></tr>
+      <tr><td>11</td><td>Nguyễn Hữu L</td><td>0933001122</td><td>Máy in Canon</td><td><button class="edit">Sửa</button><button class="delete">Xóa</button></td></tr>
+      <tr><td>12</td><td>Trịnh Thị M</td><td>0977554433</td><td>Bộ sạc nhanh Anker</td><td><button class="edit">Sửa</button><button class="delete">Xóa</button></td></tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
